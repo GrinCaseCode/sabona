@@ -823,7 +823,7 @@ form {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all 0.5s;
+	transition: all 0.5s; 
 	border-radius: 50%;
 }
 .slick-arrow:hover {
