@@ -93,6 +93,68 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 			]
 		});
 
+		$('.slider-for').slick({
+			arrows: false,
+			dots: false,
+			infinite: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			asNavFor: '.slider-nav',
+			touchThreshold: 1000,
+			prevArrow: '<div class="slick-prev slick-arrow"><i class="fas fa-chevron-left"></i><div/>',
+			nextArrow: '<div class="slick-next slick-arrow"><i class="fas fa-chevron-right"></i><div/>',
+		});
+	
+		$('.slider-nav').slick({
+			arrows: false,
+			dots: false,
+			infinite: false,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			asNavFor: '.slider-for',
+			touchThreshold: 1000,
+			focusOnSelect: true,
+			prevArrow: '<div class="slick-prev slick-arrow"><i class="fas fa-chevron-left"></i><div/>',
+			nextArrow: '<div class="slick-next slick-arrow"><i class="fas fa-chevron-right"></i><div/>',
+			responsive: [
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 4,
+					}
+				}
+			]
+		});
+
+		$('.slider-sertificats').slick({
+			arrows: true,
+			dots: false,
+			infinite: true,
+			touchThreshold: 1000,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			prevArrow: '<div class="slick-prev slick-arrow"><i class="fal fa-chevron-left"></i><div/>',
+			nextArrow: '<div class="slick-next slick-arrow"><i class="fal fa-chevron-right"></i><div/>',
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 3,
+						dots: true,
+						arrows: false
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						dots: true,
+						arrows: false
+					}
+				}
+				]
+			});
+
 	/*input file*/
 	$("input[type='file']").change(function(){
 		var filename_text = $(this).parent().siblings(".name-upload");
@@ -112,7 +174,19 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 		}
 	}
 
+	$(".item-sidebar__head").click(function(e) {
+		e.preventDefault();
+		$(this).parent().toggleClass("active");
+		$(this).siblings(".item-sidebar__content").slideToggle(200);
+		$(this).parent().siblings(".item-sidebar").removeClass("active");
+		$(this).parent().siblings(".item-sidebar").find(".item-sidebar__content").slideUp(200);
+	  });
 
+	  $(".btn-main_filter").click(function(e) {
+		e.preventDefault();
+		$(this).toggleClass("active");
+		$(".sidebar-catalog").slideToggle(200);
+	});
 
 	//Попап менеджер FancyBox
 	//Документация: http://fancybox.net/howto
