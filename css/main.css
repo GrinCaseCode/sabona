@@ -1578,8 +1578,7 @@ form {
 	margin: 0 -5px;
 	margin-top: 17px;
 }
-.slick-current .slider-nav__item,
-.slider-nav__item:hover {
+.slick-current .slider-nav__item {
 	border-color: #5fbc74;
 }
 .title-card {
@@ -1704,4 +1703,7 @@ form {
 }
 .page-about .title-section {
 	margin-bottom: 34px;
+}
+.delivery-block__content p span {
+	white-space: nowrap;
 }

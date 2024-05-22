@@ -1396,6 +1396,9 @@
     .menu-mobile {
         display: none !important;
     }
+    .slider-nav__item:hover {
+        border-color: #5fbc74;
+    }
 }
 
  /* Large Devices, Wide Screens */
